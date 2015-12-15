@@ -1,10 +1,10 @@
 module Day01 where
 
+import Control.Monad
+import Data.Either
 import Text.Parsec
 import Text.Parsec.Char
 import Text.Parsec.String
-import Control.Monad
-import Data.Either
 
 floorMoveParser :: Parser [Int]
 floorMoveParser = (1 <$ char '(' <|> (-1) <$ char ')') `manyTill` (eof <|> void newline)
