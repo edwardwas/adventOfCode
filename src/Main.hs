@@ -1,4 +1,11 @@
 import Day06
+import Day11
+
+import Control.Monad
 
 
-main = day06PartA >>= print
+main = helper "hxbxwxba"
+    where helper i = do
+            let x = partA i
+            print x
+            helper $ increment x
